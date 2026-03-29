@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write(Boolean('js'))//true
+        document.write('\t')
+        document.write(Boolean(' '))//true
+        document.write('\t')
+        document.write(Boolean(0))//false
+        document.write('\t')
+        document.write(Boolean(NaN))
+        document.write('\t')
+        document.write(Boolean(''))//false
+        document.write('\t')
+        document.write(Boolean(null))//false
+        document.write('\t')
+        console.log(parseInt(111))
+        // parseInt(到第一个非数字,第一个不是数字直接NaN)
+        console.log(parseInt('14pv'))
+        console.log(parseInt('vh123'))
+        console.log(typeof (1234).toString())
+
+    </script>
+
+</body>
+</html>

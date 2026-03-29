@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<!--    <input type="text" value="电脑">换电脑</input>-->
+<!--    <script>-->
+<!--        const text = document.querySelector('input')-->
+<!--        console.log(text.value)-->
+<!--        // 得不到表单内容-->
+<!--        // console.log(text.innerHTML)-->
+<!--        -->
+<!--    </script>-->
+        <div data-id="自定义" data-text = '自定义'></div>
+<br>
+        <input type="checkbox" name="小明" id="1" checked>001
+
+<br>
+        <input type="radio" name="单选">1
+        <input type="radio" name="单选">2
+        <input type="radio" name="单选">3
+        <input type="radio" name="单选">4
+<script>
+        // let input = document.querySelector("input")
+        // console.log(input)
+        // input.value = 'xiao'
+        // console.log(input.value)
+        // console.log(input.type)
+
+        const div = document.querySelector('div')
+        console.log(div.dataset)
+        console.log(div.dataset.id)
+        console.log(div.dataset.text)
+</script>
+</body>
+</html>

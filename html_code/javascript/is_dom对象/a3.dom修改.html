@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+
+        .box{
+            width: 200px;
+            height: 200px;
+            color: rgba(100,100,200);
+        }
+        .box2 {
+            width: 500px;
+            height: 500px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<!--    <div class = "box">hello js</div>-->
+<!--<script>-->
+<!--    const a = document.querySelector('div.box')-->
+<!--    console.log(a.innerText)-->
+<!--    a.innerText = 'hello I am wed'-->
+<!--    console.log(a)-->
+<!--    console.log('&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;')-->
+<!--    const b = document.querySelector('div.box')-->
+<!--    console.log(b.innerHTML)-->
+<!--    b.innerHTML = '<strong>刷新</strong>'-->
+<!--    console.log(b)-->
+<!--</script>-->
+
+
+<img src="D:\a.wedstrom2023.3.8\wed_js\img\煮酒论英雄.png" alt="煮酒论英雄" >
+<!--<random src="/random/煮酒论英雄.png" alt="">-->
+<script>
+    function getNumber(m,n){
+        return Math.round((Math.random()* (n - m + 1)) + m)
+    }
+    let num = getNumber(1,10)
+    let img = document.querySelector('img');
+    console.log(num)
+
+    img.src = `/img/牢${num}.png`
+</script>
+
+
+<!--++++++++++++++++++修改格尺-->
+<!--    <div class="box">-->
+<!--        测试-->
+<!--    </div>-->
+<!--<script>-->
+<!--    const div = document.querySelector('div.box')-->
+<!--    // 部分修改-->
+<!--    // div.style.backgroundColor = 'orange'-->
+<!--    // console.dir(div)-->
+<!--    // 全部修改-->
+<!--    // div.className = 'box2'-->
+<!--    // 灵活修改-->
+<!--    // 1.加add-->
+<!--    div.classList.add('box2')-->
+<!--    // 2.删remove-->
+<!--    div.classList.remove('box2')-->
+<!--    // 3.切换tiggle,存在就被删除，不存在就加入-->
+<!--    div.classList.toggle('box2')-->
+
+<!--</script>-->
+
+</body>
+</html>

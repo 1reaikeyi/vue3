@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="app">
+    <div>
+        标题:<input type="text" v-model="search.title"/><span>{{search.title}}</span>
+        <br>
+        状态:<input type="text" v-model="search.state"/><span>{{search.state}}</span>
+    </div>
+
+</div>
+
+<script type="module">
+    //导入vue模块
+    import { createApp } from 'https://cdn.staticfile.org/vue/3.4.21/vue.esm-browser.js';
+    //创建应用实例
+    createApp({
+        data() {
+            return {
+                search:{
+                    title:"",
+                    state:""
+                }
+            }
+        }
+    }).mount("#app")//控制页面元素
+</script>
+</body>
+</html>

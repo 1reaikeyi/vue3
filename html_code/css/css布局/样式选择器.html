@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>child</title>
+    <style>
+        /*查找子类元素，first-child->第一个，last-child->最后一个，
+        nth-child(数字，从1开始)->子类的某个，(2n)所有偶数，n是从0开始的*/
+        ul li{
+            background-color: greenyellow;
+        }
+        ul li:nth-child(3n){
+            background-color: aqua;
+
+        }
+        ul li:last-child{
+            background-color: red;
+        }
+        /*向上选择*/
+        div::before{
+            content: "老鼠";
+        }
+        /*向下选择*/
+        div::after{
+            content: "snake";
+        }
+
+    </style>
+</head>
+<body>
+    <div>爱大米</div>
+<ul>
+    <li>li1</li>
+    <li>li2</li>
+    <li>li3</li>
+    <li>li4</li>
+    <li>li5</li>
+    <li>li6</li>
+    <li>li7</li>
+    <li>li8</li>
+    <li>li9</li>
+</ul>
+
+</body>
+</html>

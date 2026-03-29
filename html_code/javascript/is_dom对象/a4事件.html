@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 800px;
+            height: 300px;
+            background-color: pink;
+            position: relative; /* 为子元素的绝对定位提供参考 */
+            padding: 20px; /* 避免文字紧贴边缘 */
+            box-sizing: border-box; /* 让padding不影响总宽度 */
+        }
+        .box2{
+            width: 30px;
+            height: 30px;
+            background-color: black;
+            color: white; /* 文字颜色为白色，与黑色背景对比 */
+            position: absolute; /* 绝对定位 */
+            top: 10px; /* 距离顶部10px */
+            right: 10px; /* 距离右侧10px */
+            display: flex;
+            align-items: center; /* 垂直居中 */
+            justify-content: center; /* 水平居中 */
+            cursor: pointer; /* 鼠标悬停时显示手型 */
+            font-weight: bold; /* 加粗文字 */
+        }
+    </style>
+</head>
+
+<body>
+<div class="box1">
+    我是广告
+    <div class="box2">X</div>
+</div>
+<script>
+    const box1 = document.querySelector('div.box1');
+    const box2 = document.querySelector('div div.box2');
+
+    // 给关闭按钮添加点击事件
+    box2.addEventListener('click', function() {
+        box1.style.display = 'none'; // 隐藏广告div
+    });
+</script>
+<!--        <button>点击</button>-->
+<!--        <script !src="">-->
+<!--            const bu = document.querySelector("button")-->
+<!--            bu.addEventListener('click',function () {-->
+<!--                alert('早上好')-->
+<!--            })-->
+<!--        </script>-->
+</body>
+
+
+</html>

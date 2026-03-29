@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 300px;
+            border: 1px solid #000;
+            /* 使用flex布局 */
+            display: flex;
+            /* 主轴x轴对齐方次 */
+            /* justify-content: flex-start; */
+            /* justify-content: flex-end; */
+           /* justify-content: center; */
+           /* justify-content: space-between; */
+           /* justify-content: space-around; */
+           /* justify-content: space-evenly; */
+
+           /* 垂直轴y轴对齐 */
+           /* 在侧轴方向没有height才能使用 */
+           /* align-items: stretch; */
+            
+           /* align-items: center; */
+           /* .box div:nth-child(2){
+            align-self: center;
+           } */
+
+            /* x轴切换成y轴 */
+            /* flex-direction: column; */
+
+        }
+        /* 改变布局 */
+          .box div:nth-child(1){
+                width: 100px;
+                flex-wrap: wrap;
+            }
+            .box div:nth-child(2){
+                flex: 1;
+            } 
+            .box div:nth-child(3){
+                flex: 2;
+            }
+        .box div{
+            width: 200px;
+            /* height: 100px;  */
+            background-color: rgba(0,100,100,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+</body>
+</html>

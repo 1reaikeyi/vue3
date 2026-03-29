@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // 创建
+    let ob = {
+        name: '李华', id: '001', seat: '01', project: '英语', '综合实力-a': 'fw', song: function () {
+            console.log('唱歌和跳舞')
+        }
+    }
+    // 查询1
+    console.log(ob)
+    console.log(ob.name)
+    // 查询2
+    console.log(ob['综合实力-a'])
+    // // // 增加
+    // ob.sex='男'
+    //
+    // // // 改
+    // ob.id='666'
+    //
+    // // // 删
+    // delete ob.seat
+    //**使用函数方法
+    ob.song();
+    // 遍历对象
+    //一
+    // let me = ['语文','数学','English']
+    // for(let e in me){
+    //     console.log(e)
+    //     console.log(me[e])
+    // }
+    // console.log('---------------')
+    // //二
+    for(let e in ob){
+        console.log(e)
+        console.log(ob[e])
+
+    }
+    // console.log('---------------')
+    // //三
+    // let students=[
+    // {name:'小明',id:1,school:'河南'},
+    // {name:'小米',id:2,school:'河北'},
+    // {name:'小红',id:3,school:'山东'},
+    // {name:'小刚',id:4,school:'青海'},
+    //
+    // ]
+    // console.log(students)
+    // for (let i = 0; i < students.length; i++) {
+    //     for (let e in students[i]) {
+    //         console.log(e);console.log(students[i][e])
+    //     }
+    // }
+    // document.write("<h1>学生信息</h1>")
+    // document.write("<table border='3'>")
+    // document.write('<thead><tr>' +
+    //     '<th>姓名</th>'+'<th>id</th>'+'<th>school</th>'+
+    //     '<tr></thead>');
+    // for (let i = 0; i < students.length; i++) {
+    //     for (let e in students[i]) {
+    //         document.write('')
+    //     }
+    // }
+    // document.write()
+
+</script>
+</body>
+</html>

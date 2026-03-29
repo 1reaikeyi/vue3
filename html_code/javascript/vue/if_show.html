@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-if="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+    手链价格为:  <span v-if="customer.vip==0">9.9</span>
+        <span v-else-if="customer.vip==1">19.9</span>
+        <span v-else-if="customer.vip==2">29.9</span>
+        <span v-else>请联系客服</span>
+        <br>
+        手链价格为:  <span v-show="customer.vip==0">9.9</span>
+        <span v-show="customer.vip==1">19.9</span>
+        <span v-show="customer.vip==2">29.9</span>
+    </div>
+
+
+<script type="module">
+    //导入vue模块
+    import { createApp} from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+
+    //创建vue应用实例
+    createApp({
+        data() {
+            return {
+                customer:{
+                    name:'张三',
+                    vip:1
+                }
+            }
+        }
+    }).mount("#app")//控制html元素
+</script>
+
+</body>
+</html>

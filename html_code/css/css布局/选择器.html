@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <style>
+            /*所有的child受到div影响*/
+            div span{
+            color :rgba(100,100,200,0.8)
+            }
+            /*使用》可以不受影响*/
+            div>span{
+                color :rgba(100,100,200,0.8)
+            }
+            /* 相同样子使用，隔开 */
+            h2,
+            h3,
+            h4 {
+            color:rgba(200,200,90,1)
+            }
+        /*使用 . 取交集*/
+        p.box{
+            color:rgb(100,100,200)
+        }
+        </style>
+</head>
+<body>
+    <div>
+        <span>所有的child受到div影响</span>
+        <p>
+            <span>使用》可以不受影响</span>
+        </p>
+    </div>
+    <h2>h2，h3,h4颜色一样</h2>
+    <h3>h2，h3,h4颜色一样</h3>
+    <h4>h2，h3,h4颜色一样</h4>
+
+    <p class="box">使用 . 取交集</p>
+    <p>asdf</p>
+</body>
+</html>

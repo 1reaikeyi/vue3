@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+        <textarea name="" id="" cols="50" rows="30">
+            用户注册协议
+        **欢迎注册
+        </textarea>
+        <br>
+        <button class = 'bu' disabled>我已经略读(5)</button>
+        <script>
+            const bu = document.querySelector('button.bu')
+            let i = 5
+            let  time = setInterval(function () {
+                i--
+                bu.innerHTML = `我已经略读(${i})`
+                if (i === 0){
+                    clearInterval(time);
+                    bu.disabled = false;
+                    bu.innerHTML = '同意'
+                }
+            },1000)
+        </script>
+<!--<script>-->
+<!--    // function repeat(){-->
+<!--    //     console.log('2秒执行一次')-->
+<!--    // }-->
+<!--    // let m= setInterval(repeat,2000)-->
+<!--    // console.log(m)-->
+<!--    // clearInterval(m)-->
+<!--   -->
+<!--</script>-->
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<img src="煮酒论英雄.png" alt="没找到">
+<!--D:\a.wedstrom2023.3.8\wed_js\random\煮酒论英雄.png-->
+<script>
+    function getNumber(m,n){
+        return Math.round((Math.random()* (n - m + 1)) + m)
+    }
+
+    let num = getNumber(1,10)
+    let img = document.querySelector('img');
+    console.log(num)
+    // 注意：绝对路径格式要正确（盘符+完整路径）
+    img.src = `牢${num}.png`;
+</script>
+
+</body>
+</html>

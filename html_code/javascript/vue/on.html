@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <button v-on:click="money">hi</button> &nbsp;
+    <button v-on:click="love">hello</button>
+</div>
+
+<script type="module">
+    //导入vue模块
+    import { createApp} from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+
+    //创建vue应用实例
+    createApp({
+        data() {
+            return {
+                message: 'Hello Vue'
+            }
+        },
+        methods:{
+            money: function(){
+                    document.write("hi")
+            },
+            love: function(){
+                    document.write("hello")
+            }
+        }
+    }).mount("#app");//控制html元素
+
+</script>
+
+
+</body>
+</html>
