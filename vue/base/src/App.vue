@@ -1,14 +1,10 @@
 <!--javascript-->
 <script setup>
-  import {ref} from 'vue';
-  const message = ref('北京')
-  import One from '@/view/one.vue'
-
+  import articleVue from '@/view/article.vue'
 </script>
 <!--html-->
 <template>
-  <h1>{{ message }}</h1>
-  <One/>
+  <article-vue/>
 </template>
 <!--css-->
 <style scoped>
