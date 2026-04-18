@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* css的位置 */
+         /*全局*/
+         *{
+             color: red;
+         }
+        /* 标签*/
+        div{
+            color: yellow;
+            font-size: 60px ;
+        }
+        /* 类选择器   .#### */
+        .box{
+            color:black;
+        }
+        /*id选择器*/
+        #id{
+            color:pink;
+        }
+        /* style  */
+        /* !important增强 */
+        *{
+            /*color: brown !important;*/
+        }
+
+    </style>
+    <!-- <link rel="stylesheet" href="./herf.css"> -->
+</head>
+<body>
+    <div>颜色::yellow</div>
+    <div class="box">颜色::black</div>
+    <div class="box" id="id">颜色::pink</div>
+    <div class="box" style="color: blue">颜色:: blue</div>
+</body>
+</html>

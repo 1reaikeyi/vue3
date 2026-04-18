@@ -1,16 +1,21 @@
-// import './assets/main.css'
+import './assets/main.css'
+
 import { createApp } from 'vue'
 import App from './App.vue'
 
-// 1. 导入 Element Plus
+import {createPinia} from 'pinia'
+
 import ElementPlus from 'element-plus'
-// 2. 导入 Element Plus 全局样式
 import 'element-plus/dist/index.css'
-import chinese from 'element-plus/dist/locale/zh-cn.js'
+import zhCN from 'element-plus/dist/locale/zh-cn.js'
 
 const app = createApp(App)
-
-// 3. 注册 Element Plus
-app.use(ElementPlus,{chinese})
-
+const pinia = createPinia()
+app.use(ElementPlus,{locale:zhCN})
+app.use(pinia)
 app.mount('#app')
+
+// // 开发环境下，把 app 实例挂载到 window，方便调试
+// if (import.meta.env.DEV) {
+//     window.vm = app._instance?.proxy
+// }

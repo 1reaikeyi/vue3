@@ -1,20 +1,18 @@
 <!--javascript-->
 <script setup>
-  import articleVue from '@/view/article.vue'
-  import buttonVue from '@/view/button.vue'
-  import tableVue from '@/view/table.vue'
-  import pageVue from '@/view/page.vue'
-  import formVue from '@/view/form.vue'
-  import navigationVue from '@/view/navigation.vue'
+import startVue from '@/view/vue/start.vue'
+import imgVue from '@/view/vue/img.vue'
+import recodeVue from '@/view/vue/记事本.vue'
+import reVue from '@/view/vue/re.vue'
+
+
 </script>
 <!--html-->
 <template>
-<!--  <article-vue/>-->
-<!--  <button-vue/>-->
-  <table-vue/>
-  <page-vue/>
-  <form-vue/>
-  <navigation-vue/>
+<!--<start-vue></start-vue>-->
+<!--  <img-vue></img-vue>-->
+<!--  <recode-vue></recode-vue>-->
+  <re-vue></re-vue>
 </template>
 <!--css-->
 <style scoped>

@@ -1,25 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-//导入组件
-import LoginVue from '@/views/login/Login.vue'
-import LayoutVue from '@/views/login/Layout.vue'
-
-import ArticleCategoryVue from '@/views/article/ArticleCategory.vue'
-import ArticleManageVue from '@/views/article/ArticleManage.vue'
-import UserAvatarVue from '@/views/user/UserAvatar.vue'
-import UserInfoVue from '@/views/user/UserInfo.vue'
-import UserResetPasswordVue from '@/views/user/UserResetPassword.vue'
-
-//定义路由关系
 const routes = [
-    { path: '/login', component: LoginVue },
+    { path: '/login', component: () => import('@/views/login/Login.vue') },
     {
-        path: '/', component: LayoutVue,redirect:'/article/manage', children: [
-            { path: '/article/category', component: ArticleCategoryVue },
-            { path: '/article/manage', component: ArticleManageVue },
-            { path: '/user/info', component: UserInfoVue },
-            { path: '/user/avatar', component: UserAvatarVue },
-            { path: '/user/resetPassword', component: UserResetPasswordVue }
+        path: '/', component: () => import('@/views/login/Layout.vue'),redirect:'/article/manage', children: [
+            { path: '/article/category', component: () => import('@/views/article/ArticleCategory.vue') },
+            { path: '/article/manage', component: () => import('@/views/article/ArticleManage.vue') },
+            { path: '/user/info', component: () => import('@/views/user/UserInfo.vue') },
+            { path: '/user/avatar', component: () => import('@/views/user/UserAvatar.vue') },
+            { path: '/user/resetPassword', component: () => import('@/views/user/UserResetPassword.vue') }
         ]
     }
 ]
