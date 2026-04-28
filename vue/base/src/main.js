@@ -14,10 +14,12 @@ import router from './router/router'
 
 const app = createApp(App)
 const pinia = createPinia()
-app.use(ElementPlus,{locale:zhCN})
 app.use(pinia.use(persist))
+app.use(ElementPlus,{locale:zhCN})
 app.use(router)
 app.mount('#app')
+
+// npm install vue-router@4 pinia pinia-plugin-persistedstate element-plus axios
 
 // // 开发环境下，把 app 实例挂载到 window，方便调试
 // if (import.meta.env.DEV) {
