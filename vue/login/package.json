@@ -1,0 +1,23 @@
+{
+  "name": "animated-characters-login",
+  "version": "1.0.0",
+  "description": "Vue 3 login page with interactive cartoon characters that follow your mouse and react to input",
+  "type": "module",
+  "license": "MIT",
+  "keywords": ["vue", "login", "animation", "characters", "interactive"],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.5.13",
+    "lucide-vue-next": "^0.468.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.0",
+    "vue-tsc": "^2.2.0"
+  }
+}
