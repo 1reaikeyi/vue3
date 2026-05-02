@@ -18,12 +18,12 @@ export const userLoginService = ({ userName, password }) => {
 }
 
 // 获取用户信息
-export const userGetService = (id) =>
+export const userGetByIdService = (id) =>
   request.get(`/user/${id}`)
 
 // 更新用户信息
-export const userUpdateService = (data) =>
-  request.put('/user/update', data)
+export const userUpdateUserService = (data) =>
+  request.put('/user', data)
 
 
 // 更新用户密码

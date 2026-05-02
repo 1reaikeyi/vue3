@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import { artGetPageService, categoryGetListService } from '@/api/article'
+import { articleGetPageService, categoryReadService } from '@/api/article'
 
 const articleList = ref([])
 const categoryList = ref([])
@@ -12,21 +12,21 @@ const params = ref({
   pageSize: 10
 })
 
-const getArticleList = async () => {
+const getArticlePage = async () => {
   loading.value = true
-  const res = await artGetPageService(params.value)
+  const res = await articleGetPageService(params.value)
   articleList.value = res.data.records
   total.value = res.data.total
   loading.value = false
 }
 
 const getCategoryList = async () => {
-  const res = await categoryGetListService()
+  const res = await categoryReadService()
   categoryList.value = res.data
 }
 
 onMounted(() => {
-  getArticleList()
+  getArticlePage()
   getCategoryList()
 })
 
@@ -34,24 +34,24 @@ const getCategoryName = (categoryId) => {
   const category = categoryList.value.find(c => c.id === categoryId)
   return category ? category.categoryName : '-'
 }
-const getCreatUser = () => {
-  const CreatUser = categoryList.value.find(c => c.creatUser)
-  return CreatUser ? CreatUser.getCreatUser : '-'
+const getCreateUser = (categoryId) => {
+  const CreatUser = categoryList.value.find(c => c.id === categoryId )
+  return CreatUser ? CreatUser.createUser : '-'
 }
-const getUpdateUser = () => {
-  const UpdateUser = categoryList.value.find(c => c.updateUser)
-  return UpdateUser ? UpdateUser.getCreatUser : '-'
+const getUpdateUser = (categoryId) => {
+  const UpdateUser = categoryList.value.find(c => c.id === categoryId)
+  return UpdateUser ? UpdateUser.updateUser : '-'
 }
 
 const onSizeChange = (size) => {
   params.value.pageNum = 1
   params.value.pageSize = size
-  getArticleList()
+  getArticlePage()
 }
 
 const onCurrentChange = (page) => {
   params.value.pageNum = page
-  getArticleList()
+  getArticlePage()
 }
 </script>
 
@@ -71,7 +71,7 @@ const onCurrentChange = (page) => {
       </el-table-column>
       <el-table-column label="创建人" width="120">
         <template #default="{ row }">
-          {{ getCreatUser(row.createUser) }}
+          {{ getCreateUser(row.createUser) }}
         </template>
       </el-table-column>
       <el-table-column label="更新人" width="120">
@@ -92,10 +92,7 @@ const onCurrentChange = (page) => {
     <el-pagination
       v-model:current-page="params.pageNum"
       v-model:page-size="params.pageSize"
-      :page-sizes="[5, 10, 20, 50]"
-      :background="true"
-      layout="jumper, total, sizes, prev, pager, next"
-      :total="total"
+      :page-sizes="[5, 10, 20, 50]" :background="true" layout="jumper, total, sizes, prev, pager, next" :total="total"
       @size-change="onSizeChange"
       @current-change="onCurrentChange"
       style="margin-top: 20px; justify-content: flex-end"

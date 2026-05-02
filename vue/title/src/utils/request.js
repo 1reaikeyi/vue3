@@ -8,13 +8,14 @@ const instance = axios.create({
   timeout: 10000
 })
 
-// 请求拦截器
 instance.interceptors.request.use(
   (config) => {
-    // 从localStorage中获取token，避免在拦截器中使用composable
     const token = localStorage.getItem('big-user') ? JSON.parse(localStorage.getItem('big-user')).token : ''
     if (token) {
       config.headers.Authorization = token
+    }
+    if (!(config.data instanceof FormData)) {
+      config.headers['Content-Type'] = 'application/json'
     }
     return config
   },

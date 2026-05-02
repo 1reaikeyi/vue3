@@ -3,10 +3,10 @@ import { ref } from 'vue'
 import { Edit, Delete } from '@element-plus/icons-vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import {
-  categoryGetListService,
-  categoryAddService,
-  categoryEditService,
-  categoryDelService
+  categoryReadService,
+  categoryAddCategoryService,
+  categoryEditCategoryService,
+  categoryDelByIdService
 } from '@/api/article'
 
 const channelList = ref([])
@@ -19,6 +19,7 @@ const formModel = ref({
   id: null,
   categoryName: '',
   categoryAlias: ''
+
 })
 
 const rules = {
@@ -32,7 +33,7 @@ const rules = {
 
 const getChannelList = async () => {
   loading.value = true
-  const res = await categoryGetListService()
+  const res = await categoryReadService()
   channelList.value = res.data
   loading.value = false
 }
@@ -56,7 +57,7 @@ const onDelChannel = async (row) => {
     confirmButtonText: '确认',
     cancelButtonText: '取消'
   })
-  await categoryDelService(row.id)
+  await categoryDelByIdService(row.id)
   ElMessage.success('删除成功')
   getChannelList()
 }
@@ -64,10 +65,10 @@ const onDelChannel = async (row) => {
 const onSubmit = async () => {
   await formRef.value.validate()
   if (isEdit.value) {
-    await categoryEditService(formModel.value)
+    await categoryEditCategoryService(formModel.value)
     ElMessage.success('编辑成功')
   } else {
-    await categoryAddService(formModel.value)
+    await categoryAddCategoryService(formModel.value)
     ElMessage.success('添加成功')
   }
   dialogVisible.value = false

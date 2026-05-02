@@ -3,12 +3,12 @@ import { ref, onMounted } from 'vue'
 import { Delete, Edit } from '@element-plus/icons-vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import {
-  artGetListService,
-  artPublishService,
-  artGetIdService,
-  artEditService,
-  artDelService,
-  categoryGetListService
+  articleReadService,
+  articlePublishArticleService,
+  articleGetByIdService,
+  articleEditArticleService,
+  articleDelByIdService,
+  categoryReadService
 } from '@/api/article'
 import ArticleEdit from '@/views/article/component/Edit.vue'
 
@@ -19,13 +19,13 @@ const articleEditRef = ref()
 
 const getArticleList = async () => {
   loading.value = true
-  const res = await artGetListService()
+  const res = await articleReadService()
   articleList.value = res.data
   loading.value = false
 }
 
 const getCategoryList = async () => {
-  const res = await categoryGetListService()
+  const res = await categoryReadService()
   categoryList.value = res.data
 }
 
@@ -53,7 +53,7 @@ const onDeleteArticle = async (row) => {
     confirmButtonText: '确认',
     cancelButtonText: '取消'
   })
-  await artDelService(row.id)
+  await articleDelByIdService(row.id)
   ElMessage.success('删除成功')
   getArticleList()
 }

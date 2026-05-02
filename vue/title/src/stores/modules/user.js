@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import { userGetService, userLoginService, userRegisterService } from '@/api/user.js'
+import { userGetByIdService, userLoginService, userRegisterService } from '@/api/user.js'
 import { getUserIdFromToken } from '@/stores/modules/jwt.js'
 
 export const useUserStore = defineStore(
@@ -34,7 +34,7 @@ export const useUserStore = defineStore(
         console.error('无法获取用户ID，token可能无效')
         return
       }
-      const res = await userGetService(userId.value)
+      const res = await userGetByIdService(userId.value)
       user.value = res.data
     }
 

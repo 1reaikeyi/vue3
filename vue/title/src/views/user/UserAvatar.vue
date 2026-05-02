@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { Plus, Upload } from '@element-plus/icons-vue'
 import { useUserStore } from '@/stores'
-import { userUpdateService } from '@/api/user'
+import { userUpdateUserService } from '@/api/user'
 import { commonUploadService } from '@/api/common'
 import { ElMessage } from 'element-plus'
 
@@ -29,7 +29,7 @@ const onUpdateAvatar = async () => {
   formData.append('file', selectedFile.value)
   const uploadRes = await commonUploadService(formData)
   const avatarUrl = uploadRes.data
-  await userUpdateService({
+  await userUpdateUserService({
     userName: userStore.user?.userName,
     nickName: userStore.user?.nickName,
     email: userStore.user?.email,

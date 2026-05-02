@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useUserStore } from '@/stores'
-import { userUpdateService } from '@/api/user'
+import { userUpdateUserService } from '@/api/user'
 import { ElMessage } from 'element-plus'
 
 const userStore = useUserStore()
