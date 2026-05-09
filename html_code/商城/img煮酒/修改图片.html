@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<img src="讨论.png" alt="没找到">
+<script>
+    function getNumber(m,n){
+        return Math.round((Math.random()* (n - m + 1)) + m)
+    }
+    let num = getNumber(1,10)
+    let img = document.querySelector('img');
+    img.src =`牢${num}.png`
+</script>
+</body>
+</html>
